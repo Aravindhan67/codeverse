@@ -38,9 +38,11 @@ function initLoader() {
 function initCustomCursor() {
     const cursor = document.getElementById('custom-cursor');
     
-    // Check if touch device
-    if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
+    // Check if touch device - disable cursor on mobile/tablet
+    if (window.matchMedia('(hover: none) and (pointer: coarse)').matches || 
+        window.matchMedia('(max-width: 768px)').matches) {
         cursor.style.display = 'none';
+        document.body.style.cursor = 'auto';
         return;
     }
     

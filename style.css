@@ -1696,15 +1696,15 @@ body::before {
 /* Disable custom cursor on touch devices */
 @media (hover: none) and (pointer: coarse) {
     body {
-        cursor: auto;
+        cursor: auto !important;
     }
     
     .custom-cursor {
-        display: none;
+        display: none !important;
     }
     
     .btn,
-    .domain-card,
+    .problem-card,
     .contact-card,
     .org-card,
     .date-card {
