@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CODEVERSE'26 | 24-Hour Hackathon</title>
+    <meta name="description" content="CODEVERSE'26 - 24-Hour Hackathon by Kongu Engineering College. Unleash your coding superpowers!">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Orbitron:wght@400;700;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Animated Loader -->
+    <div id="loader" class="loader-wrap">
+        <div class="spider-logo">
+            <div class="spider-body"></div>
+            <div class="web-ring ring-1"></div>
+            <div class="web-ring ring-2"></div>
+            <div class="web-ring ring-3"></div>
+        </div>
+        <p class="loading-text">Initializing Spider-Verse...</p>
+        <div class="loading-bar">
+            <div class="loading-progress"></div>
+        </div>
+    </div>
+
+    <!-- Web Corner Decorations -->
+    <div class="web-corner web-top-left"></div>
+    <div class="web-corner web-top-right"></div>
+    <div class="web-corner web-bottom-left"></div>
+    <div class="web-corner web-bottom-right"></div>
+
+    <!-- Particle Background -->
+    <div id="particles-container"></div>
+
+    <!-- Sticky Navbar -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="spider-icon">🕷️</span>
+                CODEVERSE'26
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#dates">Dates</a></li>
+                <li><a href="#prizes">Prizes</a></li>
+                <li><a href="#domains">Domains</a></li>
+                <li><a href="#register">Register</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="parallax-bg" id="parallax-bg"></div>
+        <div class="city-skyline"></div>
+        <canvas id="swing-canvas"></canvas>
+        <div class="hero-content">
+            <div class="hero-badge">🕷️ SPIDER-VERSE EDITION</div>
+            <h1 class="main-title">
+                <span class="title-line">CODEVERSE'26</span>
+                <span class="title-sub">24-HOUR HACKATHON</span>
+            </h1>
+            <div class="event-date">
+                <span class="date-highlight">ON FEB 20</span>
+            </div>
+            <p class="hero-subtitle">"Unleash your coding superpowers"</p>
+            <div class="hero-btns">
+                <a href="#register" class="btn btn-primary web-shoot-btn">
+                    <span class="btn-text">Register Now</span>
+                    <span class="web-effect"></span>
+                </a>
+                <a href="#domains" class="btn btn-secondary">
+                    <span class="btn-text">View Domains</span>
+                </a>
+            </div>
+        </div>
+        <div class="scroll-down">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span class="scroll-text">Swing Down</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-visual reveal-left">
+                    <div class="spider-web-bg"></div>
+                    <div class="about-icon">🕷️</div>
+                </div>
+                <div class="about-content reveal-right">
+                    <h2 class="section-title">About <span class="text-red">CODEVERSE'26</span></h2>
+                    <p class="about-text">
+                        Join us for an epic 24-hour coding adventure inspired by the Spider-Verse! 
+                        Just like Miles Morales discovered his powers, discover your coding potential 
+                        at the most electrifying hackathon of the year.
+                    </p>
+                    <div class="organizers">
+                        <h3>Organized by</h3>
+                        <div class="org-cards">
+                            <div class="org-card glass">
+                                <div class="org-icon">🏛️</div>
+                                <span>Kongu Engineering College</span>
+                            </div>
+                            <div class="org-card glass">
+                                <div class="org-icon">💻</div>
+                                <span>Computer Society of India (CSI)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Important Dates Section -->
+    <section id="dates" class="section bg-dark-gradient">
+        <div class="container">
+            <h2 class="section-title text-center">Important <span class="text-blue">Dates</span></h2>
+            <div class="dates-grid">
+                <div class="date-card glass reveal-up">
+                    <div class="date-icon">📅</div>
+                    <h3>Last Date to Register</h3>
+                    <div class="date-highlight-card">18 FEB 2026</div>
+                </div>
+                <div class="date-card glass reveal-up" style="animation-delay: 0.2s;">
+                    <div class="date-icon">🚀</div>
+                    <h3>Event Date</h3>
+                    <div class="date-highlight-card red">20 FEB 2026</div>
+                </div>
+            </div>
+            
+            <!-- Countdown Timer -->
+            <div class="countdown-container reveal-up">
+                <h3 class="countdown-title">Time Until Hackathon</h3>
+                <div class="countdown" id="countdown">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="days">00</span>
+                        <span class="countdown-label">Days</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="hours">00</span>
+                        <span class="countdown-label">Hours</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="minutes">00</span>
+                        <span class="countdown-label">Minutes</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="seconds">00</span>
+                        <span class="countdown-label">Seconds</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prize Section -->
+    <section id="prizes" class="section">
+        <div class="container">
+            <h2 class="section-title text-center">Prize <span class="text-red">Pool</span></h2>
+            <div class="prize-container reveal-up">
+                <div class="prize-glow"></div>
+                <div class="trophy-icon">🏆</div>
+                <div class="prize-amount">
+                    <span class="currency">₹</span>
+                    <span class="amount" id="prize-counter">10,000</span>
+                </div>
+                <p class="prize-text">Worth of Exciting Prizes</p>
+                <div class="coins-container">
+                    <div class="coin">🪙</div>
+                    <div class="coin">🪙</div>
+                    <div class="coin">🪙</div>
+                    <div class="coin">🪙</div>
+                    <div class="coin">🪙</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Domains Section -->
+    <section id="domains" class="section bg-dark-gradient">
+        <div class="container">
+            <h2 class="section-title text-center">Hackathon <span class="text-blue">Domains</span></h2>
+            <div class="domains-grid">
+                <!-- Web Development -->
+                <div class="domain-card glass reveal-up">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="domain-icon">🌐</div>
+                            <h3>Web Development</h3>
+                            <p>Build amazing web experiences</p>
+                            <span class="flip-hint">Hover to flip</span>
+                        </div>
+                        <div class="card-back">
+                            <h3>Web Dev</h3>
+                            <ul>
+                                <li>Frontend Magic</li>
+                                <li>Backend Power</li>
+                                <li>Full Stack</li>
+                                <li>Web Apps</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Machine Learning -->
+                <div class="domain-card glass reveal-up" style="animation-delay: 0.15s;">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="domain-icon">🤖</div>
+                            <h3>Machine Learning</h3>
+                            <p>AI-powered solutions</p>
+                            <span class="flip-hint">Hover to flip</span>
+                        </div>
+                        <div class="card-back">
+                            <h3>ML/AI</h3>
+                            <ul>
+                                <li>Neural Networks</li>
+                                <li>Data Science</li>
+                                <li>Computer Vision</li>
+                                <li>NLP</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Application -->
+                <div class="domain-card glass reveal-up" style="animation-delay: 0.3s;">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="domain-icon">📱</div>
+                            <h3>Mobile Application</h3>
+                            <p>Create mobile experiences</p>
+                            <span class="flip-hint">Hover to flip</span>
+                        </div>
+                        <div class="card-back">
+                            <h3>Mobile Dev</h3>
+                            <ul>
+                                <li>iOS Apps</li>
+                                <li>Android Apps</li>
+                                <li>Cross Platform</li>
+                                <li>React Native</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cyber Security -->
+                <div class="domain-card glass reveal-up" style="animation-delay: 0.45s;">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="domain-icon">🔒</div>
+                            <h3>Cyber Security</h3>
+                            <p>Secure the digital world</p>
+                            <span class="flip-hint">Hover to flip</span>
+                        </div>
+                        <div class="card-back">
+                            <h3>CyberSec</h3>
+                            <ul>
+                                <li>Ethical Hacking</li>
+                                <li>Cryptography</li>
+                                <li>Network Security</li>
+                                <li>CTF Challenges</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="register" class="section">
+        <div class="container">
+            <h2 class="section-title text-center">Register <span class="text-red">Now</span></h2>
+            <div class="registration-container">
+                <div class="fee-section reveal-up">
+                    <div class="fee-card glass">
+                        <h3>Registration Fee</h3>
+                        <div class="fee-items">
+                            <div class="fee-item">
+                                <span class="fee-badge csi">CSI Member</span>
+                                <span class="fee-amount free">FREE</span>
+                            </div>
+                            <div class="fee-item">
+                                <span class="fee-badge non-csi">Non-CSI</span>
+                                <span class="fee-amount">₹150<span class="per-person">/person</span></span>
+                            </div>
+                        </div>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdc6rNDSaVr1W6czB69sHcaxm8j0YRm4Ez_QlJAON3grlFFLA/viewform" 
+                           target="_blank" 
+                           class="btn btn-primary btn-full web-shoot-btn">
+                            <span class="btn-text">Open Google Form</span>
+                            <span class="web-effect"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section bg-dark-gradient">
+        <div class="container">
+            <h2 class="section-title text-center">Contact <span class="text-blue">Us</span></h2>
+            <div class="contacts-grid">
+                <a href="tel:9677511479" class="contact-card glass reveal-up">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-info">
+                        <h3>Athvaitha</h3>
+                        <p class="phone-number">9677511479</p>
+                        <span class="call-hint">Click to call</span>
+                    </div>
+                </a>
+                <a href="tel:6380564753" class="contact-card glass reveal-up" style="animation-delay: 0.2s;">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-info">
+                        <h3>Barathram</h3>
+                        <p class="phone-number">6380564753</p>
+                        <span class="call-hint">Click to call</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="spider-icon">🕷️</span>
+                    <span>CODEVERSE'26</span>
+                </div>
+                <p class="footer-tagline">Designed with Spider-Verse Theme</p>
+                <div class="footer-divider"></div>
+                <p class="footer-copyright">© 2026 CODEVERSE Hackathon. All rights reserved.</p>
+            </div>
+        </div>
+        <div class="web-strings">
+            <div class="web-string string-1"></div>
+            <div class="web-string string-2"></div>
+            <div class="web-string string-3"></div>
+        </div>
+    </footer>
+
+    <!-- Custom Cursor -->
+    <div id="custom-cursor" class="custom-cursor">
+        <div class="cursor-spider"></div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
