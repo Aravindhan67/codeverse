@@ -2,15 +2,23 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone') {
+        stage('Build') {
             steps {
-                checkout scm
+                echo 'Build Successful'
             }
         }
 
-        stage('Build') {
+        stage('Project Check') {
             steps {
-                sh 'echo Build Successful'
+                echo 'Verifying project structure...'
+                // Check if key files exist
+                script {
+                    if (fileExists('index.html')) {
+                        echo 'index.html found'
+                    } else {
+                        error 'index.html not found!'
+                    }
+                }
             }
         }
     }
