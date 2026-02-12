@@ -1135,114 +1135,90 @@ body::before {
     50% { transform: translateY(-15px) rotate(10deg); }
 }
 
-/* Domains Section */
-.domains-grid {
+/* Problem Statements Section */
+.problem-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
-    perspective: 1000px;
 }
 
-.domain-card {
-    height: 320px;
-    cursor: none;
-    background: transparent;
-    border: none;
-}
-
-.card-inner {
+.problem-card {
+    padding: 35px;
     position: relative;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.domain-card:hover .card-inner {
-    transform: rotateY(180deg);
-}
-
-.card-front,
-.card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 30px;
-    background: var(--card-bg);
-    backdrop-filter: blur(10px);
+    transition: var(--transition-smooth);
     border: 1px solid var(--glass-border);
 }
 
-.card-front {
-    transition: var(--transition-smooth);
-}
-
-.domain-card:hover .card-front {
+.problem-card:hover {
+    transform: translateY(-10px);
     border-color: var(--spider-red);
-    box-shadow: var(--neon-shadow-red);
+    box-shadow: 0 20px 40px rgba(225, 6, 0, 0.2);
 }
 
-.card-back {
-    transform: rotateY(180deg);
-    background: linear-gradient(135deg, rgba(225, 6, 0, 0.2), rgba(0, 212, 255, 0.2));
-    border-color: var(--electric-blue);
+.problem-number {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-family: var(--tech-font);
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.1);
+    line-height: 1;
 }
 
-.domain-icon {
-    font-size: 4rem;
+.problem-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.problem-card h3 {
+    font-family: var(--comic-font);
+    font-size: 1.5rem;
+    color: var(--spider-red);
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.problem-desc {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    line-height: 1.6;
     margin-bottom: 20px;
 }
 
-.card-front h3 {
-    font-family: var(--comic-font);
-    font-size: 1.8rem;
-    color: var(--spider-red);
-    margin-bottom: 10px;
-    text-align: center;
+.problem-objectives {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 15px 20px;
+    border-left: 3px solid var(--electric-blue);
 }
 
-.card-front p {
-    color: var(--text-gray);
-    text-align: center;
-}
-
-.flip-hint {
-    margin-top: 20px;
+.problem-objectives h4 {
     font-family: var(--tech-font);
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     color: var(--electric-blue);
     text-transform: uppercase;
-    letter-spacing: 2px;
-    opacity: 0.7;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
 }
 
-.card-back h3 {
-    font-family: var(--comic-font);
-    font-size: 1.8rem;
-    color: var(--electric-blue);
-    margin-bottom: 20px;
-}
-
-.card-back ul {
+.problem-objectives ul {
     list-style: none;
-    text-align: center;
 }
 
-.card-back li {
-    padding: 8px 0;
+.problem-objectives li {
     color: var(--text-white);
-    font-size: 0.95rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.85rem;
+    padding: 5px 0;
+    padding-left: 15px;
+    position: relative;
 }
 
-.card-back li:last-child {
-    border-bottom: none;
+.problem-objectives li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--spider-red);
 }
 
 /* Registration Section */
@@ -1489,6 +1465,37 @@ body::before {
     margin: 0 auto 20px;
 }
 
+.footer-made-with {
+    font-size: 1rem;
+    color: var(--text-white);
+    margin-bottom: 10px;
+}
+
+.footer-made-with .heart {
+    color: #ff3366;
+    animation: heartbeat 1.5s infinite;
+    display: inline-block;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+.footer-made-with .developer-name {
+    color: var(--electric-blue);
+    font-weight: 600;
+    border-bottom: 1px solid var(--electric-blue);
+    padding-bottom: 2px;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.footer-made-with .developer-name:hover {
+    color: var(--spider-red);
+    border-bottom-color: var(--spider-red);
+}
+
 .footer-copyright {
     font-size: 0.85rem;
     color: var(--text-gray);
@@ -1633,12 +1640,16 @@ body::before {
         font-size: 2rem;
     }
     
-    .domains-grid {
+    .problem-grid {
         grid-template-columns: 1fr;
     }
     
-    .domain-card {
-        height: 280px;
+    .problem-card {
+        padding: 25px;
+    }
+    
+    .problem-number {
+        font-size: 2rem;
     }
     
     .hero-btns {

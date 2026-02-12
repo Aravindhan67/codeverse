@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initLoader();
     initCustomCursor();
     initParticles();
-    initSwingingSpider();
     initNavbar();
     initScrollReveal();
     initCountdown();
@@ -118,174 +117,7 @@ function createParticle(container) {
     container.appendChild(particle);
 }
 
-// 4. Swinging Spider-Man Animation (Canvas)
-function initSwingingSpider() {
-    const canvas = document.getElementById('swing-canvas');
-    if (!canvas) return;
-    
-    const ctx = canvas.getContext('2d');
-    let width, height;
-    
-    function resize() {
-        width = canvas.width = window.innerWidth;
-        height = canvas.height = window.innerHeight;
-    }
-    
-    window.addEventListener('resize', resize);
-    resize();
-    
-    class SpiderMan {
-        constructor() {
-            this.reset();
-        }
-        
-        reset() {
-            this.anchorX = Math.random() * width * 0.6 + width * 0.2;
-            this.anchorY = -100;
-            this.length = 300 + Math.random() * 200;
-            this.angle = Math.PI / 3;
-            this.angleVel = 0;
-            this.gravity = 0.3;
-            this.damping = 0.995;
-            this.x = this.anchorX + this.length * Math.sin(this.angle);
-            this.y = this.anchorY + this.length * Math.cos(this.angle);
-            this.swaySpeed = 0.02 + Math.random() * 0.02;
-            this.color = Math.random() > 0.5 ? '#E10600' : '#000000';
-            this.eyeColor = '#ffffff';
-        }
-        
-        update() {
-            // Pendulum physics
-            const force = -this.gravity / this.length * Math.sin(this.angle);
-            this.angleVel += force;
-            this.angleVel *= this.damping;
-            this.angle += this.angleVel;
-            
-            this.x = this.anchorX + this.length * Math.sin(this.angle);
-            this.y = this.anchorY + this.length * Math.cos(this.angle);
-            
-            // Reset if off screen
-            if (this.x < -100 || this.x > width + 100 || this.y > height + 100) {
-                this.reset();
-            }
-        }
-        
-        draw() {
-            ctx.save();
-            
-            // Draw web line
-            ctx.beginPath();
-            ctx.moveTo(this.anchorX, this.anchorY);
-            ctx.lineTo(this.x, this.y);
-            ctx.strokeStyle = 'rgba(255, 255, 255, 0.6)';
-            ctx.lineWidth = 2;
-            ctx.setLineDash([8, 4]);
-            ctx.stroke();
-            ctx.setLineDash([]);
-            
-            // Draw small web details
-            for (let i = 0.2; i < 0.8; i += 0.2) {
-                const wx = this.anchorX + (this.x - this.anchorX) * i;
-                const wy = this.anchorY + (this.y - this.anchorY) * i;
-                ctx.beginPath();
-                ctx.arc(wx, wy, 2, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
-                ctx.fill();
-            }
-            
-            // Draw Spider-Man (simplified stylized version)
-            ctx.translate(this.x, this.y);
-            ctx.rotate(-this.angle);
-            
-            // Body (oval shape)
-            ctx.beginPath();
-            ctx.ellipse(0, 0, 25, 35, 0, 0, Math.PI * 2);
-            ctx.fillStyle = this.color;
-            ctx.fill();
-            
-            // Spider emblem on chest
-            ctx.beginPath();
-            ctx.moveTo(0, -10);
-            ctx.lineTo(-8, 5);
-            ctx.lineTo(0, 0);
-            ctx.lineTo(8, 5);
-            ctx.closePath();
-            ctx.fillStyle = this.color === '#E10600' ? '#000000' : '#E10600';
-            ctx.fill();
-            
-            // Spider legs (8 legs)
-            ctx.strokeStyle = this.color;
-            ctx.lineWidth = 3;
-            for (let i = 0; i < 4; i++) {
-                const angle = (i * Math.PI) / 4 - Math.PI / 2;
-                const legX = Math.cos(angle) * 35;
-                const legY = Math.sin(angle) * 35;
-                
-                ctx.beginPath();
-                ctx.moveTo(0, 0);
-                ctx.quadraticCurveTo(legX * 0.5, legY * 0.5, legX, legY);
-                ctx.stroke();
-                
-                // Mirror for other side
-                ctx.beginPath();
-                ctx.moveTo(0, 0);
-                ctx.quadraticCurveTo(-legX * 0.5, legY * 0.5, -legX, legY);
-                ctx.stroke();
-            }
-            
-            // Eyes (Spider-Man mask style)
-            ctx.fillStyle = this.eyeColor;
-            
-            // Left eye
-            ctx.beginPath();
-            ctx.moveTo(-15, -8);
-            ctx.quadraticCurveTo(-20, 5, -5, 12);
-            ctx.quadraticCurveTo(-5, 2, -15, -8);
-            ctx.fill();
-            ctx.strokeStyle = '#000';
-            ctx.lineWidth = 2;
-            ctx.stroke();
-            
-            // Right eye
-            ctx.beginPath();
-            ctx.moveTo(15, -8);
-            ctx.quadraticCurveTo(20, 5, 5, 12);
-            ctx.quadraticCurveTo(5, 2, 15, -8);
-            ctx.fill();
-            ctx.stroke();
-            
-            ctx.restore();
-        }
-    }
-    
-    // Create multiple swinging spiders
-    const spiders = [];
-    for (let i = 0; i < 3; i++) {
-        setTimeout(() => {
-            spiders.push(new SpiderMan());
-        }, i * 2000);
-    }
-    
-    let frameCount = 0;
-    function animate() {
-        ctx.clearRect(0, 0, width, height);
-        
-        // Only animate every 2nd frame for performance
-        if (frameCount % 2 === 0) {
-            spiders.forEach(spider => {
-                spider.update();
-                spider.draw();
-            });
-        }
-        
-        frameCount++;
-        requestAnimationFrame(animate);
-    }
-    
-    animate();
-}
-
-// 5. Navbar Scroll Effect
+// 4. Navbar Scroll Effect
 function initNavbar() {
     const navbar = document.getElementById('navbar');
     let lastScroll = 0;
@@ -324,7 +156,7 @@ function initNavbar() {
     });
 }
 
-// 6. Scroll Reveal Animation
+// 5. Scroll Reveal Animation
 function initScrollReveal() {
     const revealElements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right');
     
@@ -345,7 +177,7 @@ function initScrollReveal() {
     });
 }
 
-// 7. Countdown Timer
+// 6. Countdown Timer
 function initCountdown() {
     const eventDate = new Date('February 20, 2026 00:00:00').getTime();
     
@@ -376,7 +208,7 @@ function initCountdown() {
     setInterval(updateCountdown, 1000);
 }
 
-// 8. Parallax Effect
+// 7. Parallax Effect
 function initParallax() {
     const parallaxBg = document.getElementById('parallax-bg');
     
@@ -404,7 +236,7 @@ function initParallax() {
     }
 }
 
-// 9. Mobile Menu
+// 8. Mobile Menu
 function initMobileMenu() {
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.querySelector('.nav-menu');
@@ -417,7 +249,7 @@ function initMobileMenu() {
     }
 }
 
-// 10. Web Shoot Effect on Buttons
+// 9. Web Shoot Effect on Buttons
 function initWebShootEffect() {
     const webButtons = document.querySelectorAll('.web-shoot-btn');
     
@@ -484,7 +316,7 @@ function createThwipEffect(x, y) {
     }).onfinish = () => thwip.remove();
 }
 
-// 11. Prize Counter Animation
+// 10. Prize Counter Animation
 function initPrizeCounter() {
     const prizeElement = document.getElementById('prize-counter');
     if (!prizeElement) return;
@@ -530,7 +362,7 @@ function animateCounter(element, target) {
     requestAnimationFrame(update);
 }
 
-// 12. 3D Card Tilt Effect
+// 11. 3D Card Tilt Effect
 function init3DCardTilt() {
     const cards = document.querySelectorAll('.domain-card, .date-card, .contact-card');
     
@@ -555,7 +387,7 @@ function init3DCardTilt() {
     });
 }
 
-// 13. Glitch Text Effect (for special elements)
+// 12. Glitch Text Effect (for special elements)
 function initGlitchEffect() {
     const glitchElements = document.querySelectorAll('.glitch');
     
@@ -577,7 +409,7 @@ function initGlitchEffect() {
 init3DCardTilt();
 initGlitchEffect();
 
-// 14. Comic Speech Bubble Tooltips
+// 13. Comic Speech Bubble Tooltips
 function createSpeechBubble(element, text) {
     const bubble = document.createElement('div');
     bubble.className = 'speech-bubble';
@@ -622,7 +454,7 @@ document.querySelectorAll('.domain-card').forEach((card, index) => {
     createSpeechBubble(card, messages[index]);
 });
 
-// 15. Keyboard Navigation Support
+// 14. Keyboard Navigation Support
 document.addEventListener('keydown', (e) => {
     // Press 'S' for spider-sense effect
     if (e.key === 's' || e.key === 'S') {
