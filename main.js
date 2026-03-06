@@ -160,7 +160,7 @@ const problemData = {
             'Integrate with existing email infrastructure',
             'Provide real-time blocking and quarantine capabilities'
         ],
-        teamSize: '3-4 members'
+        teamSize: '4-5 members'
     },
     2: {
         number: 'Problem Statement 02',
@@ -177,7 +177,7 @@ const problemData = {
             'Provide policy recommendations for government bodies',
             'Create farmer awareness through mobile applications'
         ],
-        teamSize: '3-4 members'
+        teamSize: '4-5 members'
     },
     3: {
         number: 'Problem Statement 03',
@@ -194,7 +194,7 @@ const problemData = {
             'Support multiple coordinate systems and projections',
             'Provide APIs for integration with third-party applications'
         ],
-        teamSize: '3-4 members'
+        teamSize: '4-5 members'
     },
     4: {
         number: 'Problem Statement 04',
@@ -211,7 +211,7 @@ const problemData = {
             'Support multiple ML frameworks and model types',
             'Enable A/B testing and feature experimentation'
         ],
-        teamSize: '3-4 members'
+        teamSize: '4-5 members'
     }
 };
 
