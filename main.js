@@ -285,6 +285,123 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+// 8. Register Button Surprise Effect
+function initRegisterSurprise() {
+    const registerBtn = document.getElementById('register-btn');
+    
+    if (!registerBtn) return;
+    
+    registerBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Create celebration effects
+        createConfetti();
+        createFireworks();
+        createSparkles();
+        showCelebrationText();
+        
+        // Open Google Form after a short delay
+        setTimeout(() => {
+            window.open(this.href, '_blank');
+        }, 800);
+    });
+}
+
+function createConfetti() {
+    const container = document.createElement('div');
+    container.className = 'confetti-container';
+    document.body.appendChild(container);
+    
+    const colors = ['#6B4CFF', '#9D7EFF', '#00D4FF', '#FF6B9D', '#FFD700', '#FF6B6B'];
+    const confettiCount = 150;
+    
+    for (let i = 0; i < confettiCount; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = Math.random() * 100 + '%';
+        confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.animationDelay = Math.random() * 0.5 + 's';
+        
+        // Random shapes
+        const shapeType = Math.random();
+        if (shapeType < 0.33) {
+            confetti.style.borderRadius = '50%'; // Circle
+        } else if (shapeType < 0.66) {
+            confetti.style.clipPath = 'polygon(50% 0%, 100% 100%, 0% 100%)'; // Triangle
+        } else {
+            confetti.style.clipPath = 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)'; // Diamond
+        }
+        
+        container.appendChild(confetti);
+        
+        // Trigger animation
+        setTimeout(() => confetti.classList.add('active'), 50);
+        
+        // Remove after animation
+        setTimeout(() => confetti.remove(), 3000);
+    }
+    
+    // Remove container
+    setTimeout(() => container.remove(), 3500);
+}
+
+function createFireworks() {
+    const positions = [
+        { x: 20, y: 30 },
+        { x: 80, y: 20 },
+        { x: 50, y: 50 },
+        { x: 30, y: 70 },
+        { x: 70, y: 60 }
+    ];
+    
+    positions.forEach((pos, index) => {
+        setTimeout(() => {
+            const firework = document.createElement('div');
+            firework.className = 'firework';
+            firework.style.left = pos.x + '%';
+            firework.style.top = pos.y + '%';
+            firework.style.background = `hsl(${Math.random() * 360}, 100%, 50%)`;
+            document.body.appendChild(firework);
+            
+            firework.classList.add('active');
+            setTimeout(() => firework.remove(), 1000);
+        }, index * 200);
+    });
+}
+
+function createSparkles() {
+    const sparkleCount = 30;
+    
+    for (let i = 0; i < sparkleCount; i++) {
+        setTimeout(() => {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = Math.random() * 100 + '%';
+            sparkle.style.top = Math.random() * 100 + '%';
+            document.body.appendChild(sparkle);
+            
+            sparkle.classList.add('active');
+            setTimeout(() => sparkle.remove(), 1500);
+        }, i * 50);
+    }
+}
+
+function showCelebrationText() {
+    const texts = ['🎉 Let\'s Go! 🚀', 'Ready to Hack! 💻', 'Innovation Awaits! ⚡', 'You\'re In! 🏆'];
+    const text = texts[Math.floor(Math.random() * texts.length)];
+    
+    const celebrationEl = document.createElement('div');
+    celebrationEl.className = 'celebration-text';
+    celebrationEl.textContent = text;
+    document.body.appendChild(celebrationEl);
+    
+    setTimeout(() => celebrationEl.classList.add('active'), 100);
+    setTimeout(() => celebrationEl.remove(), 2100);
+}
+
+// Initialize register surprise
+initRegisterSurprise();
+
 // 6. Smooth Scroll for Navigation Links
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
