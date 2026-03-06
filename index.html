@@ -4,50 +4,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CODEVERSE'26 | 24-Hour Hackathon</title>
-    <meta name="description" content="CODEVERSE'26 - 24-Hour Hackathon by Kongu Engineering College. Unleash your coding superpowers!">
-    <link rel="stylesheet" href="style.css">
+    <title>HACKHUB'26 | 24-Hour Hackathon - CSI KEC</title>
+    <meta name="description" content="HACKHUB'26 - 24-Hour Hackathon by Computer Society of India, KEC Students Branch. Exclusive for CSI Members.">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Orbitron:wght@400;700;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <!-- Animated Loader -->
     <div id="loader" class="loader-wrap">
-        <div class="spider-logo">
-            <div class="spider-body"></div>
-            <div class="web-ring ring-1"></div>
-            <div class="web-ring ring-2"></div>
-            <div class="web-ring ring-3"></div>
-        </div>
-        <p class="loading-text">Initializing Spider-Verse...</p>
-        <div class="loading-bar">
-            <div class="loading-progress"></div>
+        <div class="loader-content">
+            <div class="circular-loader">
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring spinner-ring-2"></div>
+                <div class="spinner-ring spinner-ring-3"></div>
+                <div class="loader-center">
+                    <div class="loader-icon">⚡</div>
+                </div>
+            </div>
+            <p class="loading-text">Loading HackHub'26...</p>
+            <div class="digital-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <span class="progress-percentage">0%</span>
+            </div>
         </div>
     </div>
 
-    <!-- Web Corner Decorations -->
-    <div class="web-corner web-top-left"></div>
-    <div class="web-corner web-top-right"></div>
-    <div class="web-corner web-bottom-left"></div>
-    <div class="web-corner web-bottom-right"></div>
-
-    <!-- Particle Background -->
+    <!-- Floating Particles Background -->
     <div id="particles-container"></div>
+
+    <!-- Gradient Blobs -->
+    <div class="gradient-blob gradient-blob-1"></div>
+    <div class="gradient-blob gradient-blob-2"></div>
+    <div class="gradient-blob gradient-blob-3"></div>
 
     <!-- Sticky Navbar -->
     <nav id="navbar">
         <div class="nav-container">
             <a href="#" class="logo">
-                <span class="spider-icon">🕷️</span>
-                CODEVERSE'26
+                <span class="logo-icon">⚡</span>
+                HACKHUB'26
             </a>
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#dates">Dates</a></li>
-                <li><a href="#prizes">Prizes</a></li>
-                <li><a href="#domains">Problem Statements</a></li>
+                <li><a href="#details">Details</a></li>
+                <li><a href="#problems">Problem Statements</a></li>
+                <li><a href="#benefits">Benefits</a></li>
                 <li><a href="#register">Register</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -61,247 +72,231 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="parallax-bg" id="parallax-bg"></div>
-        <div class="city-skyline"></div>
-
+        <div class="tech-grid-bg"></div>
+        
         <div class="hero-content">
-            <div class="hero-badge">🕷️ SPIDER-VERSE EDITION</div>
-            <h1 class="main-title">
-                <span class="title-line">CODEVERSE'26</span>
-                <span class="title-sub">24-HOUR HACKATHON</span>
-            </h1>
-            <div class="event-date">
-                <span class="date-highlight">ON FEB 20</span>
+            <div class="hero-badge" data-aos="fade-down" data-aos-duration="800">
+                🚀 Exclusive for CSI Members
             </div>
-            <p class="hero-subtitle">"Unleash your coding superpowers"</p>
-            <div class="hero-btns">
-                <a href="#register" class="btn btn-primary web-shoot-btn">
+            <h1 class="main-title" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
+                <span class="title-gradient">HACKHUB'26</span>
+            </h1>
+            <h2 class="hero-subtitle" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                24 Hours Hackathon
+            </h2>
+            <p class="hero-description" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
+                Join the ultimate innovation challenge at Kongu Engineering College
+            </p>
+            <div class="hero-btns" data-aos="fade-up" data-aos-duration="800" data-aos-delay="800">
+                <a href="#register" class="btn btn-primary">
                     <span class="btn-text">Register Now</span>
-                    <span class="web-effect"></span>
+                    <span class="btn-glow"></span>
                 </a>
-                <a href="#domains" class="btn btn-secondary">
-                    <span class="btn-text">View Domains</span>
+                <a href="#problems" class="btn btn-secondary">
+                    <span class="btn-text">View Problem Statements</span>
                 </a>
             </div>
         </div>
-
     </section>
 
-    <!-- About Section -->
+    <!-- About / Event Details Section -->
     <section id="about" class="section">
         <div class="container">
-            <div class="about-grid">
-                <div class="about-visual reveal-left">
-                    <div class="spider-web-bg"></div>
-                    <div class="about-icon">🕷️</div>
-                </div>
-                <div class="about-content reveal-right">
-                    <h2 class="section-title">About <span class="text-red">CODEVERSE'26</span></h2>
-                    <p class="about-text">
-                        Join us for an epic 24-hour coding adventure inspired by the Spider-Verse! 
-                        Just like Miles Morales discovered his powers, discover your coding potential 
-                        at the most electrifying hackathon of the year.
-                    </p>
-                    <div class="organizers">
-                        <h3>Organized by</h3>
-                        <div class="org-cards">
-                            <div class="org-card glass">
-                                <div class="org-icon">🏛️</div>
-                                <span>Kongu Engineering College</span>
-                            </div>
-                            <div class="org-card glass">
-                                <div class="org-icon">💻</div>
-                                <span>Computer Society of India (CSI)</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Event <span class="text-gradient">Details</span></h2>
+                <p class="section-subtitle">Everything you need to know about HACKHUB'26</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Important Dates Section -->
-    <section id="dates" class="section bg-dark-gradient">
-        <div class="container">
-            <h2 class="section-title text-center">Important <span class="text-blue">Dates</span></h2>
-            <div class="dates-grid">
-                <div class="date-card glass reveal-up">
-                    <div class="date-icon">📅</div>
-                    <h3>Last Date to Register</h3>
-                    <div class="date-highlight-card">18 FEB 2026</div>
+            
+            <div class="details-grid">
+                <div class="detail-card glass" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    <div class="detail-icon-wrapper">
+                        <div class="detail-icon">📅</div>
+                    </div>
+                    <h3>Date</h3>
+                    <p class="detail-info">12 & 13 March 2026</p>
                 </div>
-                <div class="date-card glass reveal-up" style="animation-delay: 0.2s;">
-                    <div class="date-icon">🚀</div>
-                    <h3>Event Date</h3>
-                    <div class="date-highlight-card red">20 FEB 2026</div>
+                
+                <div class="detail-card glass" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <div class="detail-icon-wrapper">
+                        <div class="detail-icon">⏰</div>
+                    </div>
+                    <h3>Duration</h3>
+                    <p class="detail-info">9:00 AM – 9:00 AM<br><span class="highlight">(24 Hours)</span></p>
+                </div>
+                
+                <div class="detail-card glass" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                    <div class="detail-icon-wrapper">
+                        <div class="detail-icon">🏛️</div>
+                    </div>
+                    <h3>Venue</h3>
+                    <p class="detail-info">Maharaja Auditorium<br><span class="highlight">KEC Campus</span></p>
+                </div>
+                
+                <div class="detail-card glass" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                    <div class="detail-icon-wrapper">
+                        <div class="detail-icon">👥</div>
+                    </div>
+                    <h3>Eligibility</h3>
+                    <p class="detail-info">Only for CSI Members<br><span class="highlight">All members must attend Round 1</span></p>
                 </div>
             </div>
             
-            <!-- Countdown Timer -->
-            <div class="countdown-container reveal-up">
-                <h3 class="countdown-title">Time Until Hackathon</h3>
-                <div class="countdown" id="countdown">
-                    <div class="countdown-item">
-                        <span class="countdown-number" id="days">00</span>
-                        <span class="countdown-label">Days</span>
+            <div class="organizer-section" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
+                <div class="organizer-card glass">
+                    <div class="organizer-header">
+                        <div class="org-icon">🏛️</div>
+                        <h3>Organized by</h3>
                     </div>
-                    <div class="countdown-item">
-                        <span class="countdown-number" id="hours">00</span>
-                        <span class="countdown-label">Hours</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span class="countdown-number" id="minutes">00</span>
-                        <span class="countdown-label">Minutes</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span class="countdown-number" id="seconds">00</span>
-                        <span class="countdown-label">Seconds</span>
+                    <div class="organizer-name">
+                        Computer Society of India – KEC Students Branch<br>
+                        Kongu Engineering College
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Prize Section -->
-    <section id="prizes" class="section">
-        <div class="container">
-            <h2 class="section-title text-center">Prize <span class="text-red">Pool</span></h2>
-            <div class="prize-container reveal-up">
-                <div class="prize-glow"></div>
-                <div class="trophy-icon">🏆</div>
-                <div class="prize-amount">
-                    <span class="currency">₹</span>
-                    <span class="amount" id="prize-counter">10,000</span>
-                </div>
-                <p class="prize-text">Worth of Exciting Prizes</p>
-                <div class="coins-container">
-                    <div class="coin">🪙</div>
-                    <div class="coin">🪙</div>
-                    <div class="coin">🪙</div>
-                    <div class="coin">🪙</div>
-                    <div class="coin">🪙</div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Important Dates removed - integrated into About section -->
+
+    <!-- Prize Section Removed - Not mentioned in event details -->
 
     <!-- Problem Statements Section -->
-    <section id="domains" class="section bg-dark-gradient">
+    <section id="problems" class="section bg-gradient">
         <div class="container">
-            <h2 class="section-title text-center">Problem <span class="text-blue">Statements</span></h2>
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Problem <span class="text-gradient">Statements</span></h2>
+                <p class="section-subtitle">Innovate and solve real-world challenges</p>
+            </div>
+            
             <div class="problem-grid">
-                <!-- Problem 1: AI Resume Match -->
-                <div class="problem-card glass reveal-up">
+                <!-- Problem 1: AI Email Security -->
+                <div class="problem-card glass" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100" onclick="openProblemModal(1)">
                     <div class="problem-number">01</div>
-                    <div class="problem-icon">📄</div>
-                    <h3>AI Resume – Job Description Match Engine</h3>
-                    <p class="problem-desc">AI-based system that analyzes resumes and job descriptions to generate compatibility scores and highlight skill gaps using NLP.</p>
-                    <div class="problem-objectives">
-                        <h4>Objectives:</h4>
-                        <ul>
-                            <li>Extract skills from resume & job description</li>
-                            <li>Calculate similarity score</li>
-                            <li>Highlight matched/missing skills</li>
-                            <li>Display compatibility percentage</li>
-                        </ul>
+                    <div class="problem-icon-wrapper">
+                        <div class="problem-icon">📧</div>
+                    </div>
+                    <h3>AI-Powered Email Attachment Threat Detection System</h3>
+                    <p class="problem-desc">Build an ML system that detects malicious email attachments including phishing, malware, and suspicious files.</p>
+                    <div class="view-details-btn">
+                        <span>View Details</span>
+                        <div class="arrow-right"></div>
                     </div>
                 </div>
 
-                <!-- Problem 2: Fake News Detection -->
-                <div class="problem-card glass reveal-up" style="animation-delay: 0.1s;">
+                <!-- Problem 2: Air Quality & Crop Residue -->
+                <div class="problem-card glass" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200" onclick="openProblemModal(2)">
                     <div class="problem-number">02</div>
-                    <div class="problem-icon">🔍</div>
-                    <h3>Fake News / Deepfake Detection System</h3>
-                    <p class="problem-desc">AI-driven system to detect manipulated content and fake information from text, images, or videos.</p>
-                    <div class="problem-objectives">
-                        <h4>Objectives:</h4>
-                        <ul>
-                            <li>Detect fake news from text</li>
-                            <li>Identify deepfake images/videos</li>
-                            <li>Provide authenticity score</li>
-                            <li>Explain detection reasons</li>
-                        </ul>
+                    <div class="problem-icon-wrapper">
+                        <div class="problem-icon">🌾</div>
+                    </div>
+                    <h3>AI for Preventive Air Quality Management & Sustainable Crop Residue Utilization</h3>
+                    <p class="problem-desc">Predict crop residue burning events and recommend economic alternatives using AI.</p>
+                    <div class="view-details-btn">
+                        <span>View Details</span>
+                        <div class="arrow-right"></div>
                     </div>
                 </div>
 
-                <!-- Problem 3: UPI Fraud Detection -->
-                <div class="problem-card glass reveal-up" style="animation-delay: 0.2s;">
+                <!-- Problem 3: Geospatial Engine -->
+                <div class="problem-card glass" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300" onclick="openProblemModal(3)">
                     <div class="problem-number">03</div>
-                    <div class="problem-icon">💳</div>
-                    <h3>AI-Powered Fraud Detection for UPI</h3>
-                    <p class="problem-desc">Intelligent system that detects suspicious UPI transaction patterns in real-time using ML.</p>
-                    <div class="problem-objectives">
-                        <h4>Objectives:</h4>
-                        <ul>
-                            <li>Analyze transaction patterns</li>
-                            <li>Detect unusual behavior</li>
-                            <li>Assign fraud risk score</li>
-                            <li>Generate alerts</li>
-                        </ul>
+                    <div class="problem-icon-wrapper">
+                        <div class="problem-icon">🗺️</div>
+                    </div>
+                    <h3>Intelligent Geospatial Engine with Real-Time Learning</h3>
+                    <p class="problem-desc">Build an ML-powered routing, geofencing, and geocoding system with continuous learning.</p>
+                    <div class="view-details-btn">
+                        <span>View Details</span>
+                        <div class="arrow-right"></div>
                     </div>
                 </div>
 
-                <!-- Problem 4: Carbon Footprint -->
-                <div class="problem-card glass reveal-up" style="animation-delay: 0.3s;">
+                <!-- Problem 4: Multi-Model Feature Engine -->
+                <div class="problem-card glass" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400" onclick="openProblemModal(4)">
                     <div class="problem-number">04</div>
-                    <div class="problem-icon">🌱</div>
-                    <h3>Carbon Footprint Predictor for Students</h3>
-                    <p class="problem-desc">AI-based system to estimate students' carbon emissions from daily activities and provide eco-friendly suggestions.</p>
-                    <div class="problem-objectives">
-                        <h4>Objectives:</h4>
-                        <ul>
-                            <li>Collect lifestyle data</li>
-                            <li>Calculate carbon footprint</li>
-                            <li>Categorize emission levels</li>
-                            <li>Provide improvement tips</li>
-                        </ul>
+                    <div class="problem-icon-wrapper">
+                        <div class="problem-icon">⚙️</div>
+                    </div>
+                    <h3>Multi-Model Dynamic Feature Execution Engine</h3>
+                    <p class="problem-desc">Design a system that efficiently executes complex feature dependencies for multiple ML models.</p>
+                    <div class="view-details-btn">
+                        <span>View Details</span>
+                        <div class="arrow-right"></div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Problem 5: MCQ Generation -->
-                <div class="problem-card glass reveal-up" style="animation-delay: 0.4s;">
-                    <div class="problem-number">05</div>
-                    <div class="problem-icon">📝</div>
-                    <h3>Concept Map-Based MCQ Generation</h3>
-                    <p class="problem-desc">AI system that generates MCQs with meaningful distractors using concept maps from educational content.</p>
-                    <div class="problem-objectives">
-                        <h4>Objectives:</h4>
-                        <ul>
-                            <li>Generate MCQs from content</li>
-                            <li>Create concept-based distractors</li>
-                            <li>Ensure one correct answer</li>
-                            <li>Maintain question quality</li>
-                        </ul>
+    <!-- Benefits Section -->
+    <section id="benefits" class="section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Why <span class="text-gradient">Participate?</span></h2>
+                <p class="section-subtitle">Experience the ultimate hackathon journey</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="100">
+                    <div class="benefit-icon-wrapper">
+                        <div class="benefit-icon">🍕</div>
                     </div>
+                    <h3>Free Food & Refreshments</h3>
+                    <p>Stay energized with complimentary meals and snacks throughout the 24 hours</p>
+                </div>
+                
+                <div class="benefit-card" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
+                    <div class="benefit-icon-wrapper">
+                        <div class="benefit-icon">⏱️</div>
+                    </div>
+                    <h3>24 Hour Innovation</h3>
+                    <p>Non-stop coding, brainstorming, and building from dawn to dawn</p>
+                </div>
+                
+                <div class="benefit-card" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="300">
+                    <div class="benefit-icon-wrapper">
+                        <div class="benefit-icon">🤝</div>
+                    </div>
+                    <h3>Networking Opportunities</h3>
+                    <p>Connect with talented developers, mentors, and industry experts</p>
+                </div>
+                
+                <div class="benefit-card" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="400">
+                    <div class="benefit-icon-wrapper">
+                        <div class="benefit-icon">🧠</div>
+                    </div>
+                    <h3>Real-world AI Challenges</h3>
+                    <p>Solve cutting-edge problems that matter in today's tech landscape</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Registration Section -->
-    <section id="register" class="section">
+    <section id="register" class="section bg-gradient">
         <div class="container">
-            <h2 class="section-title text-center">Register <span class="text-red">Now</span></h2>
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Register <span class="text-gradient">Now</span></h2>
+                <p class="section-subtitle">Secure your spot at HACKHUB'26</p>
+            </div>
+            
             <div class="registration-container">
-                <div class="fee-section reveal-up">
-                    <div class="fee-card glass">
-                        <h3>Registration Fee</h3>
-                        <div class="fee-items">
-                            <div class="fee-item">
-                                <span class="fee-badge csi">CSI Member</span>
-                                <span class="fee-amount free">FREE</span>
-                            </div>
-                            <div class="fee-item">
-                                <span class="fee-badge non-csi">Non-CSI</span>
-                                <span class="fee-amount">₹150<span class="per-person">/person</span></span>
-                            </div>
+                <div class="registration-block glass" data-aos="zoom-in" data-aos-duration="800">
+                    <div class="registration-header">
+                        <h3>REGISTER FOR HACKHUB'26</h3>
+                        <p class="registration-note">Exclusive for CSI Members - All members must attend Round 1</p>
+                    </div>
+                    
+                    <div class="registration-content">
+                        <div class="register-btn-section">
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdc6rNDSaVr1W6czB69sHcaxm8j0YRm4Ez_QlJAON3grlFFLA/viewform" 
+                               target="_blank" 
+                               class="btn btn-primary btn-large">
+                                <span class="btn-text">REGISTER NOW</span>
+                                <span class="btn-glow"></span>
+                            </a>
+                            <p class="registration-info">Limited seats available. Register early!</p>
                         </div>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdc6rNDSaVr1W6czB69sHcaxm8j0YRm4Ez_QlJAON3grlFFLA/viewform" 
-                           target="_blank" 
-                           class="btn btn-primary btn-full web-shoot-btn">
-                            <span class="btn-text">Open Google Form</span>
-                            <span class="web-effect"></span>
-                        </a>
                     </div>
                 </div>
             </div>
@@ -309,26 +304,53 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section bg-dark-gradient">
+    <section id="contact" class="section">
         <div class="container">
-            <h2 class="section-title text-center">Contact <span class="text-blue">Us</span></h2>
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Contact <span class="text-gradient">Us</span></h2>
+                <p class="section-subtitle">Have questions? Reach out to us</p>
+            </div>
+            
             <div class="contacts-grid">
-                <a href="tel:9677511479" class="contact-card glass reveal-up">
-                    <div class="contact-icon">📞</div>
+                <a href="tel:+919677511479" class="contact-card glass" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    <div class="contact-icon-wrapper">
+                        <div class="contact-icon">📞</div>
+                    </div>
                     <div class="contact-info">
                         <h3>Athvaitha</h3>
-                        <p class="phone-number">9677511479</p>
+                        <p class="phone-number">+91 9677511479</p>
                         <span class="call-hint">Click to call</span>
                     </div>
                 </a>
-                <a href="tel:6380564753" class="contact-card glass reveal-up" style="animation-delay: 0.2s;">
-                    <div class="contact-icon">📞</div>
+                
+                <a href="tel:+916380564753" class="contact-card glass" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <div class="contact-icon-wrapper">
+                        <div class="contact-icon">📞</div>
+                    </div>
                     <div class="contact-info">
-                        <h3>Barathram</h3>
-                        <p class="phone-number">6380564753</p>
+                        <h3>Barathiram</h3>
+                        <p class="phone-number">+91 6380564753</p>
                         <span class="call-hint">Click to call</span>
                     </div>
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsor Section -->
+    <section id="sponsor" class="section bg-gradient">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Our <span class="text-gradient">Sponsor</span></h2>
+            </div>
+            
+            <div class="sponsor-container" data-aos="zoom-in" data-aos-duration="800">
+                <div class="sponsor-card glass">
+                    <div class="sponsor-badge">Sponsored by</div>
+                    <div class="sponsor-logo">
+                        <h3>AlgoTutor</h3>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -338,27 +360,36 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <span class="spider-icon">🕷️</span>
-                    <span>CODEVERSE'26</span>
+                    <span class="logo-icon">⚡</span>
+                    <span>HACKHUB'26</span>
                 </div>
-                <p class="footer-tagline">Designed with Spider-Verse Theme</p>
+                <p class="footer-org">Computer Society of India – KEC Students Branch</p>
+                <p class="footer-college">Kongu Engineering College</p>
                 <div class="footer-divider"></div>
-                <p class="footer-made-with">Made with <span class="heart">❤️</span> by <a href="https://instagram.com/aravindhan_67" target="_blank" class="developer-name">Aravindhan</a></p>
-                <p class="footer-copyright">© 2026 CODEVERSE Hackathon. All rights reserved.</p>
+                <p class="footer-made-with">Made with <span class="heart">❤️</span> by <a href="https://instagram.com/aravindhan_67" target="_blank" class="developer-link">Aravindhan</a></p>
+                <p class="footer-copyright">© 2026 HACKHUB Hackathon. All rights reserved.</p>
             </div>
         </div>
-        <div class="web-strings">
-            <div class="web-string string-1"></div>
-            <div class="web-string string-2"></div>
-            <div class="web-string string-3"></div>
+        
+        <!-- Circuit Lines Decoration -->
+        <div class="circuit-lines">
+            <div class="circuit-line line-1"></div>
+            <div class="circuit-line line-2"></div>
+            <div class="circuit-line line-3"></div>
         </div>
     </footer>
 
-    <!-- Custom Cursor -->
-    <div id="custom-cursor" class="custom-cursor">
-        <div class="cursor-spider"></div>
+    <!-- Problem Statement Modals -->
+    <div id="problem-modal" class="modal-overlay">
+        <div class="modal-container">
+            <button class="modal-close" onclick="closeProblemModal()">&times;</button>
+            <div class="modal-content" id="modal-content">
+                <!-- Content will be dynamically loaded -->
+            </div>
+        </div>
     </div>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="main.js"></script>
 </body>
 
