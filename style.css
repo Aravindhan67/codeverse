@@ -1287,8 +1287,36 @@ body {
 }
 
 .registration-note {
-    color: var(--text-gray);
-    font-size: 0.95rem;
+   color: var(--text-gray);
+   font-size: 0.95rem;
+}
+
+.fee-display {
+   display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+   margin-top: 15px;
+}
+
+.csi-fee,
+.non-csi-fee {
+   padding: 10px 20px;
+   border-radius: 20px;
+   font-size: 0.95rem;
+   font-weight: 600;
+}
+
+.csi-fee {
+   background: rgba(0, 212, 255, 0.1);
+   color: var(--secondary-blue);
+   border: 2px solid var(--secondary-blue);
+}
+
+.non-csi-fee {
+   background: rgba(107, 76, 255, 0.1);
+   color: var(--primary-purple);
+   border: 2px solid var(--primary-purple);
 }
 
 .registration-content {
